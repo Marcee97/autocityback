@@ -21,9 +21,11 @@ export const getLavados = async(req, res) => {
     try {
        const [rows] = await pool.query("SELECT * FROM lavados")
        const fechaFormateadas = rows.map(lav => {
+        const fecha = new Date(lav.fecha);
       return {
         ...lav,
         fecha: new Date(lav.fecha).toLocaleString("es-AR", {
+            timeZone: "America/Argentina/Buenos_Aires",
           day: "2-digit",
           month: "2-digit",
           year: "numeric",
