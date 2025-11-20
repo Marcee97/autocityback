@@ -20,8 +20,21 @@ export const prueba = async(req, res) => {
 export const getLavados = async(req, res) => {
     try {
        const [rows] = await pool.query("SELECT * FROM lavados")
-       console.log(rows)
-       res.json(rows)   
+       const fechaFormateadas = rows.map(lav => {
+      return {
+        ...lav,
+        fecha: new Date(lav.fecha).toLocaleString("es-AR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        })
+      };
+    });
+
+       console.log(fechaFormateadas)
+       res.json(fechaFormateadas)
     } catch (error) {
         console.log(error)
     }
