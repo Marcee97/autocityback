@@ -46,7 +46,7 @@ export const getLavados = async (req, res) => {
         hora: horaFormateda,
       };
     });
-    console.log(fechaHoras, "nuea funcion fechahora");
+   
 
     res.json(fechaHoras);
   } catch (error) {
