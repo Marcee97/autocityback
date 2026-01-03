@@ -10,7 +10,7 @@ app.use(cookieParser());       // 1 - Primero las cookies
 app.use(express.json());       // 2 - Luego JSON
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://autocity-5x4w2aikc-marces-projects-4c9937dc.vercel.app",
     credentials: true,
   })
 );                             // 3 - Luego CORS
