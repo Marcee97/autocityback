@@ -11,9 +11,10 @@ app.use(express.json());       // 2 - Luego JSON
 app.use(
   cors({
     origin: "https://autocity-5x4w2aikc-marces-projects-4c9937dc.vercel.app",
-    credentials: true,
+    credentials: true
   })
-);                             // 3 - Luego CORS
+);
+          // 3 - Luego CORS
 app.use("/", router);
 
 const PORT = process.env.PORT || 3000;
