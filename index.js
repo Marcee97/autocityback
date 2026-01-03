@@ -14,7 +14,6 @@ app.use(
     credentials: true
   })
 );
-          // 3 - Luego CORS
 app.use("/", router);
 
 const PORT = process.env.PORT || 3000;
