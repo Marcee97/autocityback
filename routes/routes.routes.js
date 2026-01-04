@@ -8,12 +8,12 @@ import { authJwt } from "../middlewares/jwt.middleware.js";
 const router = Router();
 router.get("/", testing);
 
-router.get("/verify", authJwt, (req, res) => {
+router.get("/verify", { withCredentials: true }, authJwt, (req, res) => {
   res.status(200).json({ ok: true, user: req.user });
 });
-router.post("/home",authJwt, prueba);
-router.get("/lavados",authJwt, getLavados);
+router.post("/home", authJwt, prueba);
+router.get("/lavados", authJwt, getLavados);
 router.post("/ingreso", loginMiddle({ schema: schemaLogin }), ingresoUsuario);
-router.post("/registro", registroUsuario)
+router.post("/registro", registroUsuario);
 
 export default router;
