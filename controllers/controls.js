@@ -5,6 +5,7 @@ export const testing = (req, res) => {
 };
 
 export const prueba = async (req, res) => {
+  console.log(req.userId)
   try {
     await pool.query(
       "INSERT INTO lavados (marca, vin, ubicacion, tiempo) VALUES (?,?,?,?)",

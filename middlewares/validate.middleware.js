@@ -16,3 +16,4 @@ export const loginMiddle = ({ schema }) => (req, res, next) => {
 
   next();
 }
+
