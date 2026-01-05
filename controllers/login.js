@@ -36,16 +36,8 @@ export const ingresoUsuario = async (req, res) => {
           { expiresIn: "1h" }
         );
         
-        res.cookie("token", token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: "none",
-          maxAge: 3600000
-        }
-      );
-      console.log(res.cookie);
-
-        return res.status(200).json({ message:"Login exitoso" });
+       
+        return res.status(200).json({ token });
       } else {
         return res.status(400).json({ message: "Match Ingreso denegado" });
       }
