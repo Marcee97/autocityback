@@ -9,7 +9,7 @@ const router = Router();
 router.get("/", testing);
 
 router.post("/home",isAuth, prueba);
-router.get("/lavados",isAuth, getLavados);
+router.get("/lavados", getLavados);
 router.post("/ingreso", loginMiddle({ schema: schemaLogin }), ingresoUsuario);
 router.post("/registro", registroUsuario);
 

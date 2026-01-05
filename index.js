@@ -10,7 +10,7 @@ app.use(cookieParser());       // 1 - Primero las cookies
 app.use(express.json());       // 2 - Luego JSON
 app.use(
   cors({
-    origin: "https://autocity-kappa.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true
   })
 );
@@ -20,3 +20,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
+
+// https://autocity-kappa.vercel.app
