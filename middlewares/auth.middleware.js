@@ -5,7 +5,7 @@ export const authJwt = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ message: "No autoriezado" });
+    return res.status(401).json({ message: "No autorizado" });
   }
 
   const token = authHeader.split(" ")[1];

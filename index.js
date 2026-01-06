@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());       // 2 - Luego JSON
 app.use(
   cors({
-    origin: "https://autocity-kappa.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true
   })
 );
